@@ -1,0 +1,52 @@
+.crew-section > .flow-giant-title { font-size: clamp(32px, 4.7vw, 58px); letter-spacing: -.025em; }
+.crew-intro { margin: 24px 0 0; color: #aca2b6; font-size: clamp(16px, 1.6vw, 19px); max-width: 570px; text-wrap: balance; }
+.crew-scene { width: 100%; max-width: 1050px; margin-top: 12px; }
+.crew-scene svg { display: block; width: 100%; height: auto; overflow: visible; }
+.crew-role { fill: #bcaacb; font: 15px 'Outfit', sans-serif; letter-spacing: .02em; }
+.crew-human-label { fill: #e7d3f4; }
+.crew-caption { color: #a596b2; font-size: clamp(15px, 1.8vw, 20px); margin: 4px 0 0; text-wrap: balance; }
+.crew-caption strong { color: #e5cbfa; font-weight: 500; }
+.crew-body { animation: crew-bob 3s ease-in-out infinite; animation-delay: var(--crew-delay); }
+.crew-working-arm { transform-origin: 37px 64px; animation: crew-wave 2s ease-in-out infinite; animation-delay: var(--crew-delay); }
+.crew-eyes { transform-box: fill-box; transform-origin: center; animation: crew-blink 4.5s infinite; animation-delay: var(--crew-delay); }
+.crew-antenna { animation: crew-light 2s ease-in-out infinite; animation-delay: var(--crew-delay); }
+.crew-stir { transform-origin: 441px 296px; animation: crew-stir 1.8s ease-in-out infinite; }
+.crew-steam { animation: crew-steam 2.5s ease-in-out infinite; }
+.crew-note { opacity: 0; }
+.crew-note-booking { animation: crew-booking 9s ease-in-out infinite; }
+.crew-note-payment { animation: crew-payment 9s ease-in-out infinite; }
+.crew-note-guest { animation: crew-guest 9s ease-in-out infinite; }
+.crew-finished { animation: crew-serve 9s ease-in-out infinite; }
+.crew-result { animation: crew-result 9s ease-in-out infinite; }
+.crew-sparkles { animation: crew-light 3s ease-in-out infinite; }
+@keyframes crew-bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+@keyframes crew-wave { 0%, 100% { transform: rotate(-6deg); } 50% { transform: rotate(12deg); } }
+@keyframes crew-blink { 0%, 43%, 47%, 100% { transform: scaleY(1); } 45% { transform: scaleY(.15); } }
+@keyframes crew-light { 0%, 100% { opacity: .4; } 50% { opacity: 1; } }
+@keyframes crew-stir { 0%, 100% { transform: rotate(-9deg); } 50% { transform: rotate(10deg); } }
+@keyframes crew-steam { 0%, 100% { opacity: .25; transform: translateY(5px); } 50% { opacity: .8; transform: translateY(-8px); } }
+@keyframes crew-booking { 0%, 3% { opacity: 0; transform: translate(249px, 200px) rotate(-12deg); } 8% { opacity: 1; } 24% { opacity: 1; transform: translate(390px, 230px) rotate(10deg); } 30%, 100% { opacity: 0; transform: translate(415px, 280px) scale(.3); } }
+@keyframes crew-payment { 0%, 23% { opacity: 0; transform: translate(460px, 137px) rotate(8deg); } 28% { opacity: 1; } 43% { opacity: 1; transform: translate(446px, 230px) rotate(-10deg); } 49%, 100% { opacity: 0; transform: translate(423px, 280px) scale(.3); } }
+@keyframes crew-guest { 0%, 43% { opacity: 0; transform: translate(590px, 198px) rotate(12deg); } 48% { opacity: 1; } 62% { opacity: 1; transform: translate(468px, 243px) rotate(-10deg); } 68%, 100% { opacity: 0; transform: translate(430px, 280px) scale(.3); } }
+@keyframes crew-serve { 0%, 65% { opacity: 0; transform: translateX(-125px); } 72% { opacity: 1; } 84%, 94% { opacity: 1; transform: translateX(35px); } 100% { opacity: 0; transform: translateX(35px); } }
+@keyframes crew-result { 0%, 77% { opacity: 0; transform: translateY(8px); } 84%, 95% { opacity: 1; transform: translateY(0); } 100% { opacity: 0; } }
+@media(max-width: 600px) { .crew-section { padding-inline: 16px; } .crew-scene { width: calc(100% + 28px); margin-top: 25px; margin-bottom: 12px; } .crew-caption { max-width: 280px; } .crew-role { font-size: 19px; } }
+@media(prefers-reduced-motion: reduce) { .crew-scene * { animation: none !important; } .crew-finished, .crew-result { opacity: 1; } }
+
+/* Labels sit in a clear row below the illustration, above every scene layer. */
+.crew-labels { pointer-events: none; }
+.crew-eye-look { transform: translate(var(--look-x, 0px), var(--look-y, 0px)); transition: transform 140ms ease-out; }
+.crew-cursor-light { pointer-events: none; opacity: 0; transform: translate(var(--cursor-x, 460px), var(--cursor-y, 275px)); transition: opacity .4s ease; }
+.crew-scene[data-tracking="true"] .crew-cursor-light { opacity: 1; }
+@media(prefers-reduced-motion: reduce) {
+  .crew-eye-look { transform: none; transition: none; }
+  .crew-cursor-light { display: none; }
+}
+
+/* Major business functions stand out; supporting work stays quiet. */
+.crew-role-major { font-size: 18px; font-weight: 700; fill: #e2c9f4; }
+.crew-role-support { font-size: 14px; fill: #a897b8; }
+@media (max-width: 600px) {
+  .crew-role-major { font-size: 21px; }
+  .crew-role-support { font-size: 18px; }
+}

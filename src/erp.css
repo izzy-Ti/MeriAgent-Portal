@@ -1,0 +1,40 @@
+/* ERP and AI management refresh */
+.hero-eyebrow { color: #dfbdff; letter-spacing: .16em; }
+.hero-giant-word { font-size: clamp(46px, 7.6vw, 112px); max-width: 1000px; text-wrap: balance; }
+.hero-description { max-width: 720px; }
+.hero-pill-btn { background: #d9b5ff; border-color: #d9b5ff; color: #170c25; }
+.flow-giant-title { text-wrap: balance; }
+.erp-architecture { margin-top: 72px; display: grid; grid-template-columns: 1fr 44px 1.25fr; align-items: stretch; text-align: left; gap: 12px; }
+.erp-foundation, .erp-agents { padding: 32px; border: 1px solid #38303f; border-radius: 18px; background: #15121b; }
+.erp-agents { background: linear-gradient(135deg, #30203f, #19141f); border-color: #9e69c7; }
+.erp-label { display: block; font-size: 11px; font-weight: 600; letter-spacing: .15em; color: #cf9cf4; margin-bottom: 18px; }
+.erp-architecture h3 { font-size: clamp(23px, 2.5vw, 32px); line-height: 1.2; letter-spacing: -.025em; margin: 0 0 16px; }
+.erp-architecture p { color: #bcb4c5; font-size: 15px; line-height: 1.7; margin: 0; }
+.erp-connector { display: flex; justify-content: center; align-items: center; transform: rotate(90deg); color: #d9b5ff; font-size: 32px; }
+.erp-outcome { grid-column: 1 / -1; margin-top: 12px; padding: 32px; border-radius: 18px; background: #d9b5ff; color: #1d1128; }
+.erp-outcome .erp-label { color: #5b3573; }
+.erp-outcome strong { display: block; max-width: 900px; font-size: clamp(25px, 3.2vw, 40px); line-height: 1.2; letter-spacing: -.025em; }
+.erp-outcome p { margin-top: 18px; color: #51355f; }
+.spec-accordion-item { border-radius: 12px; }
+.spec-accordion-item.open { border-color: #9e69c7; background: #1b1423; }
+.shift-flow-panel.new { border-color: #9865bc; background: #1c1523; border-radius: 16px; }
+.shift-flow-panel.old, .contact-main-card, .contact-founder-card { border-radius: 16px; }
+@media(max-width: 700px) {
+.erp-architecture { grid-template-columns: 1fr; margin-top: 40px; }
+.erp-connector { transform: none; min-height: 30px; }
+.erp-outcome { grid-column: auto; }
+.erp-foundation, .erp-agents, .erp-outcome { padding: 24px; }
+}
+
+/* Keep copy and actions in normal flow at every card width. */
+.pillars-flow-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: stretch; }
+.benefit-card { display: flex; flex-direction: column; min-width: 0; height: auto; width: 100%; padding: 28px; text-align: left; }
+.benefit-card-copy { flex: 1; }
+.benefit-card-title { font-size: clamp(28px, 3vw, 42px); line-height: 1.15; margin: 22px 0; overflow-wrap: anywhere; }
+.benefit-card-copy p { margin: 0; line-height: 1.75; }
+.benefit-card-cta { display: block; flex-shrink: 0; width: 100%; margin-top: 28px; padding: 12px 16px; }
+.benefit-card > svg { pointer-events: none; opacity: .35; }
+@media (max-width: 1024px) {
+  .pillars-flow-grid { grid-template-columns: 1fr; width: 100%; max-width: 560px; margin-inline: auto; }
+  .benefit-card-title { font-size: 36px; }
+}
