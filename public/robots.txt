@@ -1,8 +1,4 @@
 User-agent: *
 Allow: /
 
-# Host
-Host: https://meriagent.tech
-
-# Sitemaps
 Sitemap: https://meriagent.tech/sitemap.xml

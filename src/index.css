@@ -191,6 +191,7 @@ i {
 
 .brand-logo-link {
   display: flex;
+  flex-shrink: 0;
   align-items: center;
   text-decoration: none;
   transition: transform 0.25s ease;
@@ -202,9 +203,9 @@ i {
 
 /* Big prominent borderless logo */
 .brand-header-logo {
-  height: 110px;
+  height: 220px;
   width: auto;
-  max-width: 180px;
+  max-width: 300px;
   object-fit: contain;
   filter: none;
   display: block;
@@ -217,17 +218,38 @@ i {
 }
 
 .nav-link-cinematic {
+  position: relative;
   font-size: 13px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--text-silver);
   font-weight: 500;
-  transition: color 0.2s, transform 0.2s;
+  transition: color 0.2s, transform 0.2s, text-shadow 0.2s;
 }
 
-.nav-link-cinematic:hover {
-  color: #ffffff;
+.nav-link-cinematic:hover,
+.nav-link-cinematic:focus-visible {
+  color: var(--purple-glow);
+  text-shadow: 0 0 18px rgba(192, 132, 252, 0.45);
   transform: translateY(-1px);
+}
+
+.nav-link-cinematic::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -7px;
+  height: 2px;
+  background: var(--purple-glow);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.2s ease;
+}
+
+.nav-link-cinematic:hover::after,
+.nav-link-cinematic:focus-visible::after {
+  transform: scaleX(1);
 }
 
 .nav-right-actions {
@@ -250,9 +272,9 @@ i {
 }
 
 .lang-toggle-btn:hover {
-  border-color: #3f3f46;
-  color: #ffffff;
-  background: #27272a;
+  border-color: var(--purple-glow);
+  color: var(--purple-glow);
+  background: rgba(168, 85, 247, 0.12);
 }
 
 /* Centerpiece Headline Animations */
@@ -312,7 +334,7 @@ i {
   .cinematic-center { padding: 32px 20px; }
   .nav-right-actions { gap: 12px; }
   .docs-nav-link { font-size: 11px; }
-  .brand-header-logo { max-width: 120px; height: 80px; }
+  .brand-header-logo { max-width: 180px; height: 180px; }
   .hero-giant-word { overflow-wrap: anywhere; }
 }
 @media (prefers-reduced-motion: reduce) {
