@@ -14,3 +14,5 @@ export default defineConfig({
     },
   },
 })
+
+// Refresh dependency resolution after installing Three.js.

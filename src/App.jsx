@@ -147,7 +147,7 @@ const SLIDES = [
   { word: 'FEWER MANAGERS.', wordAm: 'ያነሱ አስተዳዳሪዎች።', sub: 'AI AGENTS TAKE ON THE MANAGEMENT WORK.', subAm: 'የAI ወኪሎች የአስተዳደር ስራን ይወስዳሉ።', tag: '01 / 04 · LEANER MANAGEMENT' },
   { word: 'YOUR ERP. WITH AI.', wordAm: 'የእርስዎ ERP ከAI ጋር።', sub: 'ODOO AT THE CORE. MERIAGENT IN COMMAND.', subAm: 'በእያንዳንዱ ቆይታ የገቢ እድሎችን ያግኙ', tag: '02 / 04 · ONE CONNECTED BUSINESS' },
   { word: 'AI RUNS THE ROUTINE.', wordAm: 'AI መደበኛ ስራዎችን ያከናውናል።', sub: 'REPLACE REPETITIVE ADMIN ROLES WITH AI AGENTS.', subAm: 'ለቡድንዎ ግልጽ የስራ ቀን ይስጡ', tag: '03 / 04 · LOWER STAFFING OVERHEAD' },
-  { word: 'HOTELS. RESORTS.', wordAm: 'ሆቴሎች። ሪዞርቶች።', sub: 'ONE ERP. AN AI MANAGEMENT TEAM.', subAm: 'ዝግጁ ክፍሎች። ፈጣን ምላሽ። ደስተኛ እንግዶች።', tag: '04 / 04 · HOTELS + RESORTS' },
+  { word: 'HOTELS. REAL ESTATE.', wordAm: 'ሆቴሎች። ሪል እስቴት።', sub: 'ONE ERP. AN AI MANAGEMENT TEAM.', subAm: 'ዝግጁ ክፍሎች። ፈጣን ምላሽ። ደስተኛ እንግዶች።', tag: '04 / 04 · HOSPITALITY + REAL ESTATE' },
 ]
 
 const PILLARS = [
@@ -156,7 +156,7 @@ const PILLARS = [
     en: {
       tag: '01 · Odoo ERP',
       title: <>One ERP.<br />All operations.</>,
-      desc: 'Unify hotel and resort workflows on Odoo: finance, purchasing, inventory, HR, reservations, and property operations.',
+      desc: 'Connect hotels, resorts, and real estate on Odoo: reservations, leasing, rent collection, finance, purchasing, HR, and maintenance.',
     },
     am: {
       tag: 'መሪ · 01',
@@ -169,7 +169,7 @@ const PILLARS = [
     en: {
       tag: '02 · Your AI team',
       title: <>Add AI.<br />Cut busywork.</>,
-      desc: 'Let specialist AI agents handle bookings, guest requests, payment checks, purchasing, and everyday follow-up.',
+      desc: 'Let AI agents handle bookings, property inquiries, tenant requests, payment checks, voice reception, and everyday follow-up.',
     },
     am: {
       tag: 'መሪ · 02',
@@ -196,21 +196,21 @@ const SPECIALISTS = [
   {
     "idx": "01",
     "en": {
-      "name": "Bookings & guest experience",
-      "impact": "Every stay",
+      "name": "Bookings, leasing & experience",
+      "impact": "Every stay. Every lease.",
       "tags": [
-        "Manage reservations and booking channels",
-        "Follow through on guest requests",
-        "Keep guests coming back"
+        "Manage reservations, listings, and property inquiries",
+        "Follow through on guest and tenant requests",
+        "Schedule viewings and follow up on lease renewals"
       ]
     },
     "am": {
-      "name": "Bookings & guest experience",
-      "impact": "Every stay",
+      "name": "Bookings, leasing & experience",
+      "impact": "Every stay. Every lease.",
       "tags": [
-        "Manage reservations and booking channels",
-        "Follow through on guest requests",
-        "Keep guests coming back"
+        "Manage reservations, listings, and property inquiries",
+        "Follow through on guest and tenant requests",
+        "Schedule viewings and follow up on lease renewals"
       ]
     }
   },
@@ -222,7 +222,7 @@ const SPECIALISTS = [
       "tags": [
         "Review pricing and demand",
         "Support corporate sales and website content",
-        "Coordinate events and spa services where offered"
+        "Follow up on property leads and leasing opportunities"
       ]
     },
     "am": {
@@ -231,7 +231,7 @@ const SPECIALISTS = [
       "tags": [
         "Review pricing and demand",
         "Support corporate sales and website content",
-        "Coordinate events and spa services where offered"
+        "Follow up on property leads and leasing opportunities"
       ]
     }
   },
@@ -241,7 +241,7 @@ const SPECIALISTS = [
       "name": "Payments & financial control",
       "impact": "Clearer finances",
       "tags": [
-        "Reconcile payments and flag discrepancies",
+        "Reconcile booking payments, rent, and deposits",
         "Track costs and financial exceptions",
         "Prepare executive reports"
       ]
@@ -250,7 +250,7 @@ const SPECIALISTS = [
       "name": "Payments & financial control",
       "impact": "Clearer finances",
       "tags": [
-        "Reconcile payments and flag discrepancies",
+        "Reconcile booking payments, rent, and deposits",
         "Track costs and financial exceptions",
         "Prepare executive reports"
       ]
@@ -262,7 +262,7 @@ const SPECIALISTS = [
       "name": "Property operations & supplies",
       "impact": "Smoother days",
       "tags": [
-        "Coordinate daily work and maintenance",
+        "Coordinate housekeeping, repairs, and tenant maintenance",
         "Track purchasing and inventory",
         "Follow up across departments"
       ]
@@ -271,12 +271,13 @@ const SPECIALISTS = [
       "name": "Property operations & supplies",
       "impact": "Smoother days",
       "tags": [
-        "Coordinate daily work and maintenance",
+        "Coordinate housekeeping, repairs, and tenant maintenance",
         "Track purchasing and inventory",
         "Follow up across departments"
       ]
     }
-  }
+  },
+  { idx: '05', en: { name: 'Voice reception', impact: 'Every call answered', tags: ['Answer guest and tenant calls', 'Handle availability and property inquiries', 'Route requests to the right team'] }, am: { name: 'Voice reception', impact: 'Every call answered', tags: ['Answer guest and tenant calls', 'Handle availability and property inquiries', 'Route requests to the right team'] } }
 ]
 
 const BRIEF_CARDS = [
@@ -548,8 +549,8 @@ export default function App() {
 
         {/* Minimalist Top Navigation */}
         <header className="cinematic-nav nav-anim-target">
-          <a href="#top" className="brand-logo-link" title="መሪAgent — Hotel & Resort ERP + AI">
-            <img src="/logo.png" alt="መሪAgent Hotel & Resort ERP + AI Logo" className="brand-header-logo" width="140" height="38" />
+          <a href="#top" className="brand-logo-link" title="መሪAgent — Hospitality & Real Estate ERP + AI">
+            <img src="/logo.png" alt="መሪAgent Hospitality & Real Estate ERP + AI Logo" className="brand-header-logo" width="140" height="38" />
           </a>
 
           <nav className="nav-center-links" aria-label="Main navigation">
@@ -610,7 +611,7 @@ export default function App() {
         {/* Centerpiece Headline with Flow Animations on Load and Change */}
         <div className="cinematic-center">
           <div key={activeSlide} className="slide-content-anim">
-            <p className="hero-eyebrow">{lang === 'am' ? 'መሪAgent · የሆቴልና ሪዞርት ERP · Odoo + AI' : 'Hotel & resort management · Powered by a team of AI agents'}</p>
+            <p className="hero-eyebrow">{lang === 'am' ? 'መሪAgent · የሆቴልና ሪዞርት ERP · Odoo + AI' : 'Hotels, resorts & real estate · One ERP. One AI team.'}</p>
             <h1 className="hero-giant-word">
               {lang === 'am' ? slide.wordAm : slide.word}
             </h1>
@@ -621,7 +622,7 @@ export default function App() {
               {lang === 'am' ? slide.subAm : slide.sub}
             </p>
 
-            <p className="hero-description">{lang === 'am' ? 'በOdoo ላይ የተመሠረተ የሆቴልና ሪዞርት ስርዓት፣ ቦታ ማስያዝ፣ የእንግዳ አገልግሎት፣ ፋይናንስና ዕለታዊ ስራዎችን ከሚያከናውኑ የAI ወኪሎች ጋር። መደበኛ የአስተዳደርና የሰራተኛ ሚናዎችን በAI በመተካት ወጪን ይቀንሱ።' : 'Run your hotel or resort with AI agents working across reservations, guest care, revenue, finance, and daily operations. Replace routine management and administrative roles with AI to reduce staffing costs.'}</p>
+            <p className="hero-description">{lang === 'am' ? 'በOdoo ላይ የተመሠረተ የሆቴልና ሪዞርት ስርዓት፣ ቦታ ማስያዝ፣ የእንግዳ አገልግሎት፣ ፋይናንስና ዕለታዊ ስራዎችን ከሚያከናውኑ የAI ወኪሎች ጋር። መደበኛ የአስተዳደርና የሰራተኛ ሚናዎችን በAI በመተካት ወጪን ይቀንሱ።' : 'Run your hotel, resort, or real estate business with AI agents across bookings, leasing, voice reception, finance, and property operations. Keep guests, tenants, and teams connected in one ERP.'}</p>
             <button
               type="button"
               className="hero-pill-btn cursor-pointer"
@@ -683,7 +684,7 @@ export default function App() {
         <p className="flow-lead">
           {lang === 'am'
             ? 'አምስት የተለያዩ ሲስተሞችን ከመፈተሽ ይልቅ በየዕለቱ የሆቴሉን ሙሉ ሁኔታ የሚያጠቃልል አንድ ድምፅ።'
-            : 'Bring your whole property together, from the first booking to the final payment. Built on Odoo, MeriAgent gives you a connected business system and a team of AI agents that handle everyday work across departments.'}
+            : 'Bring your whole property together, from bookings and property inquiries to leases and payments. Built on Odoo, MeriAgent gives you a connected business system and a team of AI agents that handle everyday work across departments.'}
         </p>
 
         {/* Squishy animated pillar cards */}
@@ -701,9 +702,9 @@ export default function App() {
         </div>
 
         <div className="erp-architecture" aria-label="Odoo and AI architecture">
-<div className="erp-foundation"><span className="erp-label">01 / YOUR CONNECTED BUSINESS</span><h3>Odoo ERP</h3><p>Bookings, finances, supplies, and property operations in one place.</p></div>
+<div className="erp-foundation"><span className="erp-label">01 / YOUR CONNECTED BUSINESS</span><h3>Odoo ERP</h3><p>Reservations, leases, rent, finances, supplies, and maintenance in one place.</p></div>
 <div className="erp-connector" aria-hidden="true">↑</div>
-<div className="erp-agents"><span className="erp-label">02 / YOUR AI TEAM</span><h3>Specialist agents. Working together.</h3><p>From filling rooms and welcoming guests to checking payments and keeping supplies stocked, AI agents work together across your property.</p></div>
+<div className="erp-agents"><span className="erp-label">02 / YOUR AI TEAM</span><h3>Specialist agents. Working together.</h3><p>From filling rooms and scheduling viewings to answering calls, following up on rent, and coordinating repairs, AI agents work across your properties.</p></div>
 <div className="erp-outcome"><span className="erp-label">THE BUSINESS CASE</span><strong>Replace routine employee roles with AI. Reduce management headcount and payroll overhead.</strong><p>Automate defined responsibilities while the owner retains control over sensitive decisions.</p></div>
 </div>
       </section>
@@ -813,7 +814,7 @@ export default function App() {
         <p className="flow-lead">
           {lang === 'am'
             ? 'ከመጀመሪያው ቦታ ማስያዝ እስከ መጨረሻው ክፍያ ድረስ ለእያንዳንዱ ክፍል ግልጽ የስራ መንገድ ይስጡ።'
-            : 'A connected team of AI agents works across your business, handling recurring responsibilities that otherwise need extra staff. From reservations and guest retention to financial checks and owner reports, choose the support your property needs—including events, spa, and recreation where you offer them.'}
+            : 'A connected team of AI agents works across your business, handling recurring responsibilities that otherwise need extra staff. From reservations and lease renewals to rent follow-up, maintenance, and owner reports, choose the support your hotel or real estate portfolio needs.'}
         </p>
 
         {/* 7 Clean High-Impact Specialists Accordion */}
@@ -943,8 +944,8 @@ export default function App() {
                 ]
                 : [
                   'Odoo connects operational and financial records',
-                  'AI agents turn bookings, payments, and guest activity into clear owner reports',
-                  'Specialist agents coordinate guest requests, maintenance, purchasing, and follow-up',
+                  'AI agents turn bookings, leases, rent, and property activity into clear owner reports',
+                  'Specialist agents coordinate guest and tenant requests, maintenance, purchasing, and follow-up',
                   'Replace routine employee roles with AI to reduce payroll overhead',
                 ]
               ).map((text, idx) => (
@@ -975,7 +976,7 @@ export default function App() {
         <p className="flow-lead">
           {lang === 'am'
             ? 'ስለ ሆቴልዎ ይንገሩን። MeriAgent ጊዜ ለመቆጠብ፣ አገልግሎትን ለማሻሻል እና የገቢ እድሎችን ለመለየት እንዴት እንደሚረዳ እናሳይዎታለን።'
-            : 'Tell us about your hotel or resort and the work taking up your team’s day. We will show you how a connected system and AI agents can handle recurring responsibilities, reduce staffing costs, and support the services you sell.'}
+            : 'Tell us about your hotel, resort, or real estate business and the work taking up your team’s day. We will show you how a connected system and AI agents can handle recurring responsibilities, reduce staffing costs, and support the services you sell.'}
         </p>
 
         <div className="contact-flow-grid">
@@ -1032,7 +1033,7 @@ export default function App() {
                 <p className="text-zinc-400 text-sm mb-6 leading-relaxed">
                   {lang === 'am'
                     ? 'ስልክ ቁጥርዎን እና የሆቴልዎን ስም ይተዉልን። በቀጥታ ደውለን መሪAgent በንብረትዎ ላይ እንዴት እንደሚሰራ እናነጋግርዎታለን።'
-                    : 'Send your phone number and hotel name. We will call you directly and talk through your operations.'}
+                    : 'Send your phone number and property or company name. We will call you directly and talk through your operations.'}
                 </p>
 
                 <form onSubmit={handleDemoSubmit} className="contact-form">
@@ -1066,13 +1067,13 @@ export default function App() {
                   <div className="contact-form-grid">
                     <div className="contact-form-field">
                       <label className="contact-form-label">
-                        {lang === 'am' ? 'የሆቴሉ ስም *' : 'Hotel or Resort *'}
+                        {lang === 'am' ? 'የሆቴሉ ስም *' : 'Hotel, Resort or Real Estate Company *'}
                       </label>
                       <input
                         name="hotel"
                         required
                         className="contact-form-input"
-                        placeholder={lang === 'am' ? 'ምሳሌ፡ ስካይላይት ሆቴል' : 'e.g. Skylight Hotel, Haile Grand...'}
+                        placeholder={lang === 'am' ? 'ምሳሌ፡ ስካይላይት ሆቴል' : 'e.g. Skylight Hotel or your real estate company'}
                       />
                     </div>
 
@@ -1084,7 +1085,7 @@ export default function App() {
                         name="email"
                         type="email"
                         className="contact-form-input"
-                        placeholder="gm@hotel.com"
+                        placeholder="you@company.com"
                       />
                     </div>
                   </div>
@@ -1165,9 +1166,9 @@ export default function App() {
       {/* Footer */}
       <footer className="flow-footer">
         <div className="flex items-center gap-4">
-          <img src="/logo.png" alt="መሪAgent — Hotel & Resort ERP + AI Addis Ababa" className="h-10 w-auto object-contain" width="120" height="40" />
+          <img src="/logo.png" alt="መሪAgent — Hospitality & Real Estate ERP + AI Addis Ababa" className="h-10 w-auto object-contain" width="120" height="40" />
           <span className="font-bold text-white text-sm">
-            <span className="font-['Noto_Serif_Ethiopic']">መሪ</span>Agent — Hotel & Resort ERP + AI
+            <span className="font-['Noto_Serif_Ethiopic']">መሪ</span>Agent — Hospitality & Real Estate ERP + AI
           </span>
         </div>
 
